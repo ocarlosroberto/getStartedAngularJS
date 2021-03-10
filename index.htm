@@ -1,0 +1,12 @@
+<html ng-app="getStarted">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="lib/script.js"></script>
+  </head>
+  <body>
+    <div ng-controller="MainController">
+      <h1>{{ person.firstName }} {{ person.lastName }}</h1>
+      <img ng-src="{{person.imageSrc}}">
+    </div>
+  </body>
+</html>
