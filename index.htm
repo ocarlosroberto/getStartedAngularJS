@@ -2,33 +2,17 @@
 
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="lib/script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+  <script src="lib/app.js"></script>
+  <script src="lib/MainController.js"></script>
   <script src="lib/github.js"></script>
 </head>
 
 <body>
-
-  <div id="1.1" ng-controller="MainController_1_1">
-    <h1>{{ person.firstName }} {{ person.lastName }}</h1>
-    <img ng-src="{{person.imageSrc}}">
-  </div>
-
-  <hr>
-
-  <div id="1.2" ng-controller="MainController_1_2">
-    <div>
-      {{error}}
-    </div>
-
-    {{countdown}}
-    <form name="searchUser" ng-submit="search(username)">
-      <input type="search" required placeholder="Username to find" ng-model="username">
-      <input type="submit" value="submit">
-    </form>
-    <div ng-include="'userdetails.htm'" ng-show="user"></div>
-
-  </div>
-
+  <h1>Github Viewer</h1>
+  <div ng-view></div>
 </body>
+
+
 
 </html>
