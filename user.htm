@@ -1,5 +1,6 @@
-<div id="userDetails">
+<div>
     <h2>{{user.name}}</h2>
+    {{error}}
     <img ng-src="{{user.avatar_url}}" title="{{user.name}}" height="100px" width="100px">
     Order:
     <select ng-model="repoSortOrder">
@@ -18,11 +19,15 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="item in repository | orderBy: repoSortOrder">
-            <td>{{item.name}}</td>
-            <td>{{item.stargazers_count | number}}</td>
-            <td>{{item.language}}</td>
+        <tr ng-repeat="repo in repository | orderBy: repoSortOrder">
+            <td>
+                <a href="#/repo/{{user.login}}/{{repo.name}}">
+                    {{repo.name}}
+                </a>
+            </td>
+            <td>{{repo.stargazers_count | number}}</td>
+            <td>{{repo.language}}</td>
         </tr>
     </tbody>
 </table>
-</div>
+<a href="#/main">Back to search</a>
